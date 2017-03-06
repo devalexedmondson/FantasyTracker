@@ -201,9 +201,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703062155065_adding user roles to database.cs" />
-    <Compile Include="Migrations\201703062155065_adding user roles to database.Designer.cs">
-      <DependentUpon>201703062155065_adding user roles to database.cs</DependentUpon>
+    <Compile Include="Migrations\201703062320034_Add Database and roles.cs" />
+    <Compile Include="Migrations\201703062320034_Add Database and roles.Designer.cs">
+      <DependentUpon>201703062320034_Add Database and roles.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -283,8 +283,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703062155065_adding user roles to database.resx">
-      <DependentUpon>201703062155065_adding user roles to database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703062320034_Add Database and roles.resx">
+      <DependentUpon>201703062320034_Add Database and roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
