@@ -50,7 +50,7 @@ namespace FantasyTracker.Controllers
             }
         }
 
-        //
+        //Manage/Index
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
@@ -75,7 +75,7 @@ namespace FantasyTracker.Controllers
             return View(model);
         }
 
-        //
+        //RemoveLogin
         // POST: /Manage/RemoveLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -99,14 +99,14 @@ namespace FantasyTracker.Controllers
             return RedirectToAction("ManageLogins", new { Message = message });
         }
 
-        //
+        //Manage/AddPhoneNumber
         // GET: /Manage/AddPhoneNumber
         public ActionResult AddPhoneNumber()
         {
             return View();
         }
 
-        //
+        //Manage/AddPhoneNumber
         // POST: /Manage/AddPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -130,7 +130,7 @@ namespace FantasyTracker.Controllers
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
 
-        //
+        //Manage/EnableTwoFactorAuthentication
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -145,7 +145,7 @@ namespace FantasyTracker.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
-        //
+        //Manage/DisableTwoFactorAuthentication
         // POST: /Manage/DisableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -160,7 +160,7 @@ namespace FantasyTracker.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
-        //
+        //Manage/VerifyPhoneNumber
         // GET: /Manage/VerifyPhoneNumber
         public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
         {
@@ -169,7 +169,7 @@ namespace FantasyTracker.Controllers
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
 
-        //
+        //Manage/VerifyPhoneNumber
         // POST: /Manage/VerifyPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -194,7 +194,7 @@ namespace FantasyTracker.Controllers
             return View(model);
         }
 
-        //
+        //Manage/RemovePhoneNumber
         // POST: /Manage/RemovePhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -213,14 +213,14 @@ namespace FantasyTracker.Controllers
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
 
-        //
+        //Manage/ChangePassword
         // GET: /Manage/ChangePassword
         public ActionResult ChangePassword()
         {
             return View();
         }
 
-        //
+        //Manage/ChangePassword
         // POST: /Manage/ChangePassword
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -244,14 +244,14 @@ namespace FantasyTracker.Controllers
             return View(model);
         }
 
-        //
+        //Manage/SetPassword
         // GET: /Manage/SetPassword
         public ActionResult SetPassword()
         {
             return View();
         }
 
-        //
+        //Manage/SetPassword
         // POST: /Manage/SetPassword
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -276,7 +276,7 @@ namespace FantasyTracker.Controllers
             return View(model);
         }
 
-        //
+        //Manage/ManageLogins
         // GET: /Manage/ManageLogins
         public async Task<ActionResult> ManageLogins(ManageMessageId? message)
         {
@@ -299,7 +299,7 @@ namespace FantasyTracker.Controllers
             });
         }
 
-        //
+        //Manage/LinkLogin
         // POST: /Manage/LinkLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -309,7 +309,7 @@ namespace FantasyTracker.Controllers
             return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
         }
 
-        //
+        //Manage/LinkLoginCallback
         // GET: /Manage/LinkLoginCallback
         public async Task<ActionResult> LinkLoginCallback()
         {

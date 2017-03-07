@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "AdminIndex";
+}
+    <h2>Welcome <strong>@ViewBag.Name</strong></h2>
+
+<div class="jumbotron">
+    <h1>Fantasy Tracker</h1>
+    <p class="lead"></p>
+    <h2>Welcome Admin: @User.Identity.GetUserName()</h2>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Games</h2>
+        <p>Games Today:</p>
+        <br /><p>Games This Week:</p>
+
+    </div>
+    <div class="col-md-4">
+        <h2>View All Users</h2>
+        <p>Click this button if you would like to view all users.</p>
+        @Html.ActionLink("BROKEN LINK", "Index", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </div>
+    <div class="col-md-4">
+        <h2>Add Roles</h2>
+        @Html.ActionLink("Add Role", "AddRole", "Admin", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </div>
+</div>

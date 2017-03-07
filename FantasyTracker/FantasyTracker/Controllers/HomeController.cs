@@ -10,7 +10,19 @@ namespace FantasyTracker.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole("Admin"))
+            {
+                return View("AdminIndex");
+            }
+            else if (User.IsInRole("User"))
+            {
+                return View("UserIndex");
+            }
+            else
+            {
+                return View();
+            }
+
         }
 
         public ActionResult About()
