@@ -3,7 +3,7 @@ namespace FantasyTracker.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addinguserrolestodatabase : DbMigration
+    public partial class AddDatabaseandroles : DbMigration
     {
         public override void Up()
         {

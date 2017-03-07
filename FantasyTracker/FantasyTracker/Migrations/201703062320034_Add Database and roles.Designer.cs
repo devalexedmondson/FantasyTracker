@@ -7,13 +7,13 @@ namespace FantasyTracker.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addinguserrolestodatabase : IMigrationMetadata
+    public sealed partial class AddDatabaseandroles : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addinguserrolestodatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDatabaseandroles));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703062155065_adding user roles to database"; }
+            get { return "201703062320034_Add Database and roles"; }
         }
         
         string IMigrationMetadata.Source

@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "UserIndex";
+}
+
+<div class="jumbotron">
+    <h1>Fantasy Tracker</h1>
+    <p class="lead"></p>
+    <h2>Welcome @User.Identity.GetUserName()!</h2>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>What To Watch</h2>
+        <p>Games Today: </p>
+        <br /><p>Games This Week:</p>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Change Roster</h2>
+        <p>Click this button if you would like to change your roster.</p>
+        @Html.ActionLink("BROKEN LINK", "Index", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </div>
+    <div class="col-md-4">
+        <h2>Dues</h2>
+        <p>You owe: $ 0 Dollars</p>
+    </div>
+</div>
