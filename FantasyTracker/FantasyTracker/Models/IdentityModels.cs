@@ -17,9 +17,10 @@ namespace FantasyTracker.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public Team Team { get; set; }
+        [ForeignKey("Team")]
         public int TeamId { get; set; }
-        [ForeignKey("TeamId")]
-        public Team TeamInfo { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

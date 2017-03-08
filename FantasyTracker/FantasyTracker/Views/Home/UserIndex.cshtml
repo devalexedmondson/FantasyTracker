@@ -17,21 +17,34 @@
 
     </div>
     <div class="col-md-4">
-        <h2>Roster</h2>
-        @if (Model.HasTeam)
-        {
-            //Display table
-        }
-        else
-        {
-            @Html.ActionLink("Create Team", "CreateTeam")
-        }
-        <p>Click this button if you would like to change your roster.</p>
-        @Html.ActionLink("BROKEN LINK", "Index", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        <h2>Teams</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    Team Name
+                </th>
+                <th>
+                    Players On Team
+                </th>
+                <th></th>
+            </tr>
+            @*@foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationUser.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationUser.Email)
+                    </td>
+                </tr>
+            }*@
+        </table>
     </div>
     <div class="col-md-4">
-        <h2>Dues</h2>
-        <p>You owe: $ 0 Dollars</p>
+        <h2>Manage Teams</h2>
+        <p>Click this button if you would like to change your roster.</p>
+        @Html.ActionLink("Change Roster", "UserRoster", "User", routeValues: null, htmlAttributes: new { id = "loginLink" })
     </div>
 
 </div>

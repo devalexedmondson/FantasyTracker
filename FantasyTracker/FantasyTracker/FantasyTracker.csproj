@@ -202,6 +202,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\SportsRadar.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -217,13 +218,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703062320034_Add Database and roles.cs" />
-    <Compile Include="Migrations\201703062320034_Add Database and roles.Designer.cs">
-      <DependentUpon>201703062320034_Add Database and roles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703080011199_added team for fantasy team name and player table for roster.cs" />
-    <Compile Include="Migrations\201703080011199_added team for fantasy team name and player table for roster.Designer.cs">
-      <DependentUpon>201703080011199_added team for fantasy team name and player table for roster.cs</DependentUpon>
+    <Compile Include="Migrations\201703081655453_Adding Models with FK.cs" />
+    <Compile Include="Migrations\201703081655453_Adding Models with FK.Designer.cs">
+      <DependentUpon>201703081655453_Adding Models with FK.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -319,7 +316,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\AdminIndex.cshtml" />
     <Content Include="Views\Home\UserIndex.cshtml" />
-    <Content Include="Views\Admin\Users.cshtml" />
+    <Content Include="Views\Admin\AllUsers.cshtml" />
     <Content Include="Views\User\UserRoster.cshtml" />
     <Content Include="Views\User\CreateTeam.cshtml" />
   </ItemGroup>
@@ -335,11 +332,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703062320034_Add Database and roles.resx">
-      <DependentUpon>201703062320034_Add Database and roles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703080011199_added team for fantasy team name and player table for roster.resx">
-      <DependentUpon>201703080011199_added team for fantasy team name and player table for roster.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703081655453_Adding Models with FK.resx">
+      <DependentUpon>201703081655453_Adding Models with FK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

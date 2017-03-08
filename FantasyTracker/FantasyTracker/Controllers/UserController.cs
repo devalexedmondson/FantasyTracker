@@ -19,14 +19,34 @@ namespace FantasyTracker.Controllers
         {
             return View();
         }
-
-#region Helpers
+        //CreateTeam
+        //GET: /User/CreateTeam
+        [AllowAnonymous]
+        public ActionResult CreateTeam()
+        {
+            return View();
+        }
+        //CreateTeam POST
+        //POST : /User/CreateTeam
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<ActionResult> CreateTeam(UserViewModel model)
+        {
+            //var user = UserManager.FindById(User.Identity.GetUserId());
+            //if(ModelState.IsValid)
+            //{
+            //    var team = user.TeamId.TeamName;
+            //    return RedirectToAction("Index", "Home");
+            //};
+            return View(model);
+        }
+        #region Helpers
         //private bool HasTeam()
         //{
         //    var user = UserManager.FindById(User.Identity.GetUserId());
         //    if (user != null)
         //    {
-        //        return user.Team != null;
+        //        return user.TeamId != null;
         //    }
         //    return false;
         //}

@@ -22,7 +22,6 @@ namespace FantasyTracker.Controllers
             {
                 return View();
             }
-
         }
 
         public ActionResult About()

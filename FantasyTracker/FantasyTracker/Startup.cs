@@ -32,6 +32,7 @@ namespace FantasyTracker
                 var user = new ApplicationUser();
                 user.UserName = "Fantasy";
                 user.Email = "alexedmondson20@gmail.com";
+                user.Team = new Team() { Player = new Player() };
 
                 string userPass = "Lonewolf9034334";
 

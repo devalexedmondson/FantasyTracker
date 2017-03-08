@@ -3,10 +3,19 @@ namespace FantasyTracker.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddDatabaseandroles : DbMigration
+    public partial class AddingModelswithFK : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Players",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        PlayerName = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -31,10 +40,24 @@ namespace FantasyTracker.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
+                "dbo.Teams",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        TeamName = c.String(),
+                        Sport = c.String(),
+                        PlayerId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Players", t => t.PlayerId, cascadeDelete: true)
+                .Index(t => t.PlayerId);
+            
+            CreateTable(
                 "dbo.AspNetUsers",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        TeamId = c.Int(nullable: false),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -48,6 +71,8 @@ namespace FantasyTracker.Migrations
                         UserName = c.String(nullable: false, maxLength: 256),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Teams", t => t.TeamId, cascadeDelete: true)
+                .Index(t => t.TeamId)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
             
             CreateTable(
@@ -79,21 +104,27 @@ namespace FantasyTracker.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.AspNetUsers", "TeamId", "dbo.Teams");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Teams", "PlayerId", "dbo.Players");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.AspNetUsers", new[] { "TeamId" });
+            DropIndex("dbo.Teams", new[] { "PlayerId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.Teams");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Players");
         }
     }
 }

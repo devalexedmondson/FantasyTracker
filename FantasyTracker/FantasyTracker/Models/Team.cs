@@ -12,9 +12,11 @@ namespace FantasyTracker.Models
         [Key]
         public int ID { get; set; }
         public string TeamName { get; set; }
+        public string Sport { get; set; }
 
+        public Player Player { get; set; }
+        [ForeignKey("Player")]
         public int PlayerId { get; set; }
-        [ForeignKey("PlayerId")]
-        public Player PlayerInfo { get; set; }
+        
     }
 }

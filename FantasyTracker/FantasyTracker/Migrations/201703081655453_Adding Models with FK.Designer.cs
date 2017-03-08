@@ -7,13 +7,13 @@ namespace FantasyTracker.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addedteamforfantasyteamnameandplayertableforroster : IMigrationMetadata
+    public sealed partial class AddingModelswithFK : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedteamforfantasyteamnameandplayertableforroster));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddingModelswithFK));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703080011199_added team for fantasy team name and player table for roster"; }
+            get { return "201703081655453_Adding Models with FK"; }
         }
         
         string IMigrationMetadata.Source

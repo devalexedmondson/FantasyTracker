@@ -5,3 +5,55 @@
 
 <h2>UserRoster</h2>
 
+<table class="table">
+    <tr>
+        <th>
+            Player Name
+        </th>
+        <th>
+            Team
+        </th>
+        <th>
+            Player Position
+        </th>
+        <th>
+            Points Per Game
+        </th>
+        <th>
+            Assists
+        </th>
+        <th>
+            Blocks
+        </th>
+        <th>
+            Steals
+        </th>
+        <th></th>
+    </tr>
+            @*@foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SportsRadar.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SportsRadar.Team)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SportsRadar.Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SportsRadar.PointsPerGame)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SportsRadar.Assists)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SportsRadar.Blocks)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SportsRadar.Steals)
+                </td>
+            </tr>
+        }*@
+</table>
