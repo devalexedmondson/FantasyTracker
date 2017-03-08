@@ -221,10 +221,17 @@
     <Compile Include="Migrations\201703062320034_Add Database and roles.Designer.cs">
       <DependentUpon>201703062320034_Add Database and roles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703080011199_added team for fantasy team name and player table for roster.cs" />
+    <Compile Include="Migrations\201703080011199_added team for fantasy team name and player table for roster.Designer.cs">
+      <DependentUpon>201703080011199_added team for fantasy team name and player table for roster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -314,6 +321,7 @@
     <Content Include="Views\Home\UserIndex.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\User\UserRoster.cshtml" />
+    <Content Include="Views\User\CreateTeam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -329,6 +337,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703062320034_Add Database and roles.resx">
       <DependentUpon>201703062320034_Add Database and roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703080011199_added team for fantasy team name and player table for roster.resx">
+      <DependentUpon>201703080011199_added team for fantasy team name and player table for roster.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

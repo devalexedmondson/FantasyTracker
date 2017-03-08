@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FantasyTracker.Models
 {
@@ -16,6 +17,9 @@ namespace FantasyTracker.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public int TeamId { get; set; }
+        [ForeignKey("TeamId")]
+        public Team TeamInfo { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

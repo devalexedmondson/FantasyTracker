@@ -19,5 +19,17 @@ namespace FantasyTracker.Controllers
         {
             return View();
         }
+
+#region Helpers
+        //private bool HasTeam()
+        //{
+        //    var user = UserManager.FindById(User.Identity.GetUserId());
+        //    if (user != null)
+        //    {
+        //        return user.Team != null;
+        //    }
+        //    return false;
+        //}
+        #endregion
     }
 }

@@ -38,5 +38,6 @@ namespace FantasyTracker.Controllers
 
             return View();
         }
+
     }
 }
