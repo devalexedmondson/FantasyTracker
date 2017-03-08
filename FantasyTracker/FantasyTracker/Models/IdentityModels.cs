@@ -33,5 +33,8 @@ namespace FantasyTracker.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Team> Team { get; set; }
+        public DbSet<Player> Player { get; set; }
+
     }
 }
