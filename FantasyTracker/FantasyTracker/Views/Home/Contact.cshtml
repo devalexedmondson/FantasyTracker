@@ -5,13 +5,34 @@
 <h3>@ViewBag.Message</h3>
 
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
+    333 North Plankinton Ave<br />
+    Milwaukee, WI 53202<br />
     <abbr title="Phone">P:</abbr>
     425.555.0100
 </address>
 
 <address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Support:</strong>   <a href="mailto:devcodecampArgon@gmail.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+<div id="googleMap" style="margin: 0 auto 0 auto; width:75%; height:400px;"></div>
+
+<script>
+        function myMap() {
+            var customerMap = {
+                center: { lat: 43.034134, lng: -87.911953 },
+                zoom: 13
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), customerMap);
+
+            var marker = new google.maps.Marker({
+                position: { lat: 43.034134, lng: -87.911953 },
+                draggable: false,
+                title: "FantasyTracker",
+                animation: google.maps.Animation.DROP
+            });
+            marker.setMap(map);
+        }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKY8BdEZUclJTibI7oGpFvRc3SzpuI2Q4&callback=myMap">
+</script>

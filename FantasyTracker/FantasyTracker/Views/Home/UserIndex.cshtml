@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
+
 @{
     ViewBag.Title = "UserIndex";
 }
@@ -18,6 +19,9 @@
     </div>
     <div class="col-md-4">
         <h2>Teams</h2>
+        @Html.ActionLink("Create A Team", "CreateTeam", "User", routeValues: null, htmlAttributes: new { id = "createTeamLink" })
+        ||
+        @Html.ActionLink("View Roster", "UserRoster", "User", routeValues: null, htmlAttributes: new { id = "createTeamLink" })
         <table class="table">
             <tr>
                 <th>
@@ -42,9 +46,9 @@
         </table>
     </div>
     <div class="col-md-4">
-        <h2>Manage Teams</h2>
-        <p>Click this button if you would like to change your roster.</p>
-        @Html.ActionLink("Change Roster", "UserRoster", "User", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        <h2>Manage Roster</h2>
+        <p>Click this button if you would like to add players to a team.</p>
+        @Html.ActionLink("Add Players", "CreateRoster", "User", routeValues: null, htmlAttributes: new { id = "createTeamLink" })
     </div>
 
 </div>

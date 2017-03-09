@@ -15,11 +15,18 @@ namespace FantasyTracker.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 4)]
         [Display(Name = "TeamName")]
-        public string Team { get; set; }
+        public string TeamName { get; set; }
 
         [Required]
         [Display(Name = "Sport")]
         public string Sport { get; set; }
+    }
+    public class CreateRosterViewModel
+    {
+        [Required]
+        [RegularExpression(@"^[a-z A-Z]+$", ErrorMessage = "Use letters only please")]
+        [Display(Name = "PlayerName")]
+        public string PlayerName { get; set; }
     }
 
     
