@@ -13,6 +13,7 @@ namespace FantasyTracker
         {
             ConfigureAuth(app);
             CreateRolesandUsers();
+            AddNBATeams();
         }
         public void CreateRolesandUsers()
         {
@@ -51,6 +52,11 @@ namespace FantasyTracker
                 role.Name = "User";
                 roleManager.Create(role);
             }
+        }
+        public void AddNBATeams()
+        {
+            ApplicationDbContext context = new ApplicationDbContext(); 
+
         }
     }
 }

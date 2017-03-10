@@ -24,11 +24,17 @@ namespace FantasyTracker.Models
     public class CreateRosterViewModel
     {
         [Required]
-        [RegularExpression(@"^[a-z A-Z]+$", ErrorMessage = "Use letters only please")]
-        [Display(Name = "PlayerName")]
-        public string PlayerName { get; set; }
-    }
+        public IEnumerable<NbaTeam> Teams { get; set; }
 
+        //[Required]
+        //[RegularExpression(@"^[a-z A-Z]+$", ErrorMessage = "Use letters only please")]
+        //[Display(Name = "PlayerName")]
+        //public string PlayerName { get; set; }
+    }
+    public class UserRosterViewModel
+    {
+
+    }
     
     
 }

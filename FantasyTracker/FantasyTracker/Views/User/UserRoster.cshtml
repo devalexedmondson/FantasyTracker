@@ -1,59 +1,59 @@
-﻿
-@{
-    ViewBag.Title = "UserRoster";
-}
+﻿@model IEnumerable<FantasyTracker.Models.Player>
+    @{
+        ViewBag.Title = "UserRoster";
+    }
 
-<h2>UserRoster</h2>
+    <h2>UserRoster</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            Player Name
-        </th>
-        <th>
-            Team
-        </th>
-        <th>
-            Player Position
-        </th>
-        <th>
-            Points Per Game
-        </th>
-        <th>
-            Assists
-        </th>
-        <th>
-            Blocks
-        </th>
-        <th>
-            Steals
-        </th>
-        <th></th>
-    </tr>
-            @*@foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SportsRadar.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SportsRadar.Team)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SportsRadar.Position)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SportsRadar.PointsPerGame)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SportsRadar.Assists)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SportsRadar.Blocks)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SportsRadar.Steals)
-                </td>
-            </tr>
-        }*@
-</table>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PlayerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Team)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PointsAvg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssistsAvg)
+            </th>
+            <th>
+               @Html.DisplayNameFor(model => model.BlocksAvg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StealsAvg)
+            </th>
+            <th></th>
+        </tr>
+        @*@foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlayerName )
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Team)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Position)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PointsAvg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AssistsAvg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BlocksAvg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StealsAvg)
+                    </td>
+                </tr>
+            }*@
+    </table>

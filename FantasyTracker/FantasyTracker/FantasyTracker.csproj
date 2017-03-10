@@ -210,6 +210,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\Api\UsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -222,10 +223,28 @@
     <Compile Include="Migrations\201703081655453_Adding Models with FK.Designer.cs">
       <DependentUpon>201703081655453_Adding Models with FK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703092132129_added columns to player table.cs" />
+    <Compile Include="Migrations\201703092132129_added columns to player table.Designer.cs">
+      <DependentUpon>201703092132129_added columns to player table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703101600258_added Nba team table.cs" />
+    <Compile Include="Migrations\201703101600258_added Nba team table.Designer.cs">
+      <DependentUpon>201703101600258_added Nba team table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703101602162_added Nba team table to IDmodel.cs" />
+    <Compile Include="Migrations\201703101602162_added Nba team table to IDmodel.Designer.cs">
+      <DependentUpon>201703101602162_added Nba team table to IDmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703101713119_Changed table name.cs" />
+    <Compile Include="Migrations\201703101713119_Changed table name.Designer.cs">
+      <DependentUpon>201703101713119_Changed table name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NbaTeam.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\UserViewModel.cs" />
@@ -335,6 +354,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703081655453_Adding Models with FK.resx">
       <DependentUpon>201703081655453_Adding Models with FK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703092132129_added columns to player table.resx">
+      <DependentUpon>201703092132129_added columns to player table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703101600258_added Nba team table.resx">
+      <DependentUpon>201703101600258_added Nba team table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703101602162_added Nba team table to IDmodel.resx">
+      <DependentUpon>201703101602162_added Nba team table to IDmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703101713119_Changed table name.resx">
+      <DependentUpon>201703101713119_Changed table name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

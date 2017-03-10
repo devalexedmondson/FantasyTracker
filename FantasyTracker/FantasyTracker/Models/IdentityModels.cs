@@ -25,6 +25,9 @@ namespace FantasyTracker.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Team> Team { get; set; }
+        public DbSet<Player> Player { get; set; }
+        public DbSet<NbaTeam> NbaTeam { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -34,8 +37,7 @@ namespace FantasyTracker.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Team> Team { get; set; }
-        public DbSet<Player> Player { get; set; }
+      
 
     }
 }

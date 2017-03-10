@@ -13,7 +13,7 @@
 <div class="row">
     <div class="col-md-4">
         <h2>What To Watch</h2>
-        <p>Games Today: </p>
+        <p>Games Today: <div class="row" id="games">   </div>
         <br /><p>Games This Week:</p>
 
     </div>
@@ -50,6 +50,32 @@
         <p>Click this button if you would like to add players to a team.</p>
         @Html.ActionLink("Add Players", "CreateRoster", "User", routeValues: null, htmlAttributes: new { id = "createTeamLink" })
     </div>
-
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function getGames() {
+        $.ajax({
+            type: "GET",
+            url: "https://api.sportradar.us/nba-t3/games/2017/3/10/schedule.json?api_key=9reqn46t4sn9hdaa7ppukjeq",
+            dataType: "json",
+            success: function(data) {
+                DisplayResponse(data);
+            },
+             failure: function (response) {
+                alert(response.d);
+            }
+        });
+    }
+    function DisplayResponse(games) {
+        
+        $.each(data.games, function (index, game) {
+            var gameTime = '<div class="col-sm-4"><center>';
+            gameTime += game.scheduled + '"><br>';
+            nbaGame += gameTime;
+            $('#games').html(nbaGame);
+        });
+    }
+</script>
+
 

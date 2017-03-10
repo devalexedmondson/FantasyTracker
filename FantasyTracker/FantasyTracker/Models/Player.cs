@@ -11,5 +11,12 @@ namespace FantasyTracker.Models
         [Key]
         public int ID { get; set; }
         public string PlayerName { get; set; }
+        public string Team { get; set; }
+        public string Position { get; set; }
+        public double PointsAvg { get; set; }
+        public double AssistsAvg { get; set; }
+        public double BlocksAvg { get; set; }
+        public double StealsAvg { get; set; }
+
     }
 }
