@@ -20,21 +20,26 @@ namespace FantasyTracker.Models
         [Required]
         [Display(Name = "Sport")]
         public string Sport { get; set; }
+
+        public string data { get; set;  }
     }
     public class CreateRosterViewModel
     {
-        [Required]
-        public IEnumerable<NbaTeam> Teams { get; set; }
-
         //[Required]
-        //[RegularExpression(@"^[a-z A-Z]+$", ErrorMessage = "Use letters only please")]
-        //[Display(Name = "PlayerName")]
-        //public string PlayerName { get; set; }
+        //public IEnumerable<NbaTeam> Teams { get; set; }
+
+        [Required]
+        [RegularExpression(@"^[a-z A-Z]+$", ErrorMessage = "Use letters only please")]
+        [Display(Name = "PlayerName")]
+        public string PlayerName { get; set; }
     }
     public class UserRosterViewModel
     {
-
+        public string data { get; set; }
     }
-    
+    public class ViewGamesViewModel
+    {
+        public string data { get; set; }
+    }
     
 }

@@ -23,7 +23,6 @@ namespace FantasyTracker.Controllers
         // GET: User
         public ActionResult Index()
         {
-
             return View();
         }
 
@@ -32,15 +31,11 @@ namespace FantasyTracker.Controllers
         [AllowAnonymous]
         public ActionResult CreateTeam()
         {
-            return View();
+            var x = new CreateTeamViewModel();
+            x.data = PullGames();
+            return View(x);
         }
-        //UserRoster
-        // GET: /Account/UserRoster
-        [AllowAnonymous]
-        public ActionResult UserRoster()
-        {
-            return View();
-        }
+      
         //CreateTeam POST
         //POST : /User/CreateTeam
         [HttpPost]
@@ -58,24 +53,23 @@ namespace FantasyTracker.Controllers
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index", "Home");
-
             };
             return View(model);
         }
-
-
+        
         //CreateRoster POINT AT API SEARCH CONTROLLER
         //GET: /User/CreateRoster
         [AllowAnonymous]
         public ActionResult CreateRoster()
         {
-            var nbaTeams = db.NbaTeam.ToList();
+            //var nbaTeams = db.NbaTeam.ToList();
             var viewModel = new CreateRosterViewModel
             {
-                Teams = nbaTeams
+                //Teams = nbaTeams
             };
             return View(viewModel);
         }
+
         //CreateTeam POST
         //POST : /User/CreateRoster
         [HttpPost]
@@ -83,17 +77,22 @@ namespace FantasyTracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> CreateRoster(CreateRosterViewModel model)
         {
-            var user = db.Users.Find(User.Identity.GetUserId());
+            var userId = User.Identity.GetUserId();
+            var user = db.Users.Include(x => x.Team).Where(x => x.Id == userId).First();
             if (ModelState.IsValid)
             {
                 var team = new Player()
                 {
-                    //PlayerName = model.PlayerName
+                    PlayerName = model.PlayerName
                 };
-               
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
             };
             return View(model);
         }
+
+
         //CreateTeam POST
         //POST : /User/EditTeam
         [HttpPost]
@@ -109,7 +108,65 @@ namespace FantasyTracker.Controllers
             };
             return View(model);
         }
-        
+
+        //UserRoster
+        // GET: /Account/UserRoster
+        [AllowAnonymous]
+        public ActionResult UserRoster()
+        {
+            var x = new UserRosterViewModel();
+            x.data = GetPlayers();
+            return View(x);
+        }
+
+        [AllowAnonymous]
+        public ActionResult ViewGames()
+        {
+            var x = new ViewGamesViewModel();
+            x.data = PullGames();
+            return View(x);
+        }
+        public string PullGames()
+        {
+            //put dateTime in URL string
+            var dateTime = DateTime.UtcNow.Date;
+            WebRequest request = WebRequest.Create("https://api.sportradar.us/nba-t3/games/2017/3/13/schedule.json?api_key=9reqn46t4sn9hdaa7ppukjeq");
+            WebResponse response = request.GetResponse();
+            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+            Stream dataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            string responseFromServer = reader.ReadToEnd();
+            Console.WriteLine(responseFromServer);
+            reader.Close();
+            response.Close();
+            return responseFromServer;
+        }
+        public string GetTeams()
+        {
+            WebRequest request = WebRequest.Create("https://api.sportradar.us/nba-t3/league/hierarchy.json?api_key=9reqn46t4sn9hdaa7ppukjeq");
+            WebResponse response = request.GetResponse();
+            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+            Stream dataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            string responseFromServer = reader.ReadToEnd();
+            Console.WriteLine(responseFromServer);
+            reader.Close();
+            response.Close();
+            return responseFromServer;
+        }
+        public string GetPlayers()
+        {
+            WebRequest request = WebRequest.Create("https://api.sportradar.us/nba-t3/players/0afbe608-940a-4d5d-a1f7-468718c67d91/profile.json?api_key=9reqn46t4sn9hdaa7ppukjeq");
+            WebResponse response = request.GetResponse();
+            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+            Stream dataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            string responseFromServer = reader.ReadToEnd();
+            Console.WriteLine(responseFromServer);
+            reader.Close();
+            response.Close();
+            return responseFromServer;
+        }
 
         #region Helpers
         //private bool HasTeam()

@@ -1,10 +1,41 @@
-﻿@model IEnumerable<FantasyTracker.Models.Player>
+﻿@model FantasyTracker.Models.UserRosterViewModel
     @{
         ViewBag.Title = "UserRoster";
+        Layout = "~/Views/Shared/_Layout.cshtml";
     }
 
     <h2>UserRoster</h2>
 
+@Html.HiddenFor(m => m.data, new { @id = "playerInfo" })
+
+<div id="PlayerOne" class="col-md-4">
+
+    <script>
+            document.getElementById('playerInfo');
+            //document.getElementById('gameData').value;
+            var data = document.getElementById('playerInfo').value
+            var dataObject = JSON.parse(data)
+            //Game Location
+            var playerName = dataObject.full_name;
+            //Home Team
+            var team = dataObject.team.name;
+            //AwayTeam
+            var position = dataObject.position;
+            //Time
+            var pointsAvg = dataObject.seasons[0].teams[0].average.points;
+            //Assists
+            var assistAvg = dataObject.seasons[0].teams[0].average.assists;
+            //Blocks
+            var blockAvg = dataObject.seasons[0].teams[0].average.blocks;
+            //Steals
+            var stealAvg = dataObject.seasons[0].teams[0].average.steals;
+            document.getElementById('PlayerOne');
+            document.getElementById('PlayerOne').innerHTML = '<strong>Player Name</strong>:' + playerName + '<br/><strong>Team</strong>:' + team + '<br/><strong>Position</strong>:' + position + '<br/><strong>Points Avg.</strong>:' + pointsAvg + '<br/><strong>Assist Avg.</strong>:' + assistAvg + '<br/><strong>Assist Avg.</strong>:' + blockAvg + '<br/><strong>Blocks Avg.</strong>:' + stealAvg;
+            ;
+    </script>
+</div>
+
+@*
     <table class="table">
         <tr>
             <th>
@@ -30,7 +61,7 @@
             </th>
             <th></th>
         </tr>
-        @*@foreach (var item in Model)
+        @foreach (var item in Model)
             {
                 <tr>
                     <td>
@@ -55,5 +86,6 @@
                         @Html.DisplayFor(modelItem => item.StealsAvg)
                     </td>
                 </tr>
-            }*@
-    </table>
+            }
+    </table>*@
+

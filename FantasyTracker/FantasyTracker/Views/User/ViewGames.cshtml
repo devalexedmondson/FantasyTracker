@@ -1,0 +1,286 @@
+﻿@model FantasyTracker.Models.ViewGamesViewModel
+@{
+    ViewBag.Title = "ViewGames";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Today's Games</h2>
+
+@Html.HiddenFor(m => m.data, new { @id = "gameData" })
+<div class="row">
+    <div id="GameOne" class="col-md-3">
+        <script>
+            document.getElementById('gameData');
+            //document.getElementById('gameData').value;
+            var data = document.getElementById('gameData').value
+            var dataObject = JSON.parse(data)
+            //Game Location
+            var gameLocation = dataObject.games[1].venue.city;
+            //Home Team
+            var homeTeam = dataObject.games[1].home.name;
+            //AwayTeam
+            var awayTeam = dataObject.games[1].away.name;
+            //Time
+            var gameTime = dataObject.games[1].scheduled;
+            //Network
+            var network = dataObject.games[1].broadcast.network;
+            //Coverage
+            var coverage = dataObject.games[1].coverage;
+            //Channel
+            var channel = dataObject.games[1].broadcast.satellite;
+            document.getElementById('GameOne');
+            document.getElementById('GameOne').innerHTML = '<h4>Game One</h3>' + '<strong>Location</strong>:' + gameLocation + '<br/><strong>Home Team</strong>:' + homeTeam + '<br/><strong>Away Team</strong>:' + awayTeam + '<br/><strong> Time</strong>:' + gameTime + '<br/><strong>Network</strong>:' + network + '<br/><strong>Coverage</strong>:' + coverage + '<br/><strong>DirectTV Channel</strong>:' + channel;
+            ;
+        </script>
+    </div>
+
+    <div id="GameTwo" class="col-md-3">
+        <script>
+            document.getElementById('gameData');
+            //document.getElementById('gameData').value;
+            var data = document.getElementById('gameData').value
+            var dataObject = JSON.parse(data)
+            //Game Location
+            var gameLocation = dataObject.games[2].venue.city;
+            //Home Team
+            var homeTeam = dataObject.games[2].home.name;
+            //AwayTeam
+            var awayTeam = dataObject.games[2].away.name;
+            //Time
+            var gameTime = dataObject.games[2].scheduled;
+            //Network
+            var network = dataObject.games[2].broadcast.network;
+            //Coverage
+            var coverage = dataObject.games[2].coverage;
+            //Channel
+            var channel = dataObject.games[2].broadcast.satellite;
+            document.getElementById('GameTwo');
+            document.getElementById('GameTwo').innerHTML = '<h4>Game Two</h3>' + '<strong>Location</strong>:' + gameLocation + '<br/><strong>Home Team</strong>:' + homeTeam + '<br/><strong>Away Team</strong>:' + awayTeam + '<br/><strong> Time</strong>:' + gameTime + '<br/><strong>Network</strong>:' + network + '<br/><strong>Coverage</strong>:' + coverage + '<br/><strong>DirectTV Channel</strong>:' + channel;
+            ;
+        </script>
+    </div>
+    <div id="GameThree" class="col-md-3">
+        <script>
+            document.getElementById('gameData');
+            //document.getElementById('gameData').value;
+            var data = document.getElementById('gameData').value
+            var dataObject = JSON.parse(data)
+            //Game Location
+            var gameLocation = dataObject.games[3].venue.city;
+            //Home Team
+            var homeTeam = dataObject.games[3].home.name;
+            //AwayTeam
+            var awayTeam = dataObject.games[3].away.name;
+            //Time
+            var gameTime = dataObject.games[3].scheduled;
+            //Network
+            var network = dataObject.games[3].broadcast.network;
+            //Coverage
+            var coverage = dataObject.games[3].coverage;
+            //Channel
+            var channel = dataObject.games[3].broadcast.satellite;
+            document.getElementById('GameThree');
+            document.getElementById('GameThree').innerHTML = '<h4>Game Three</h3>' + '<strong>Location</strong>:' + gameLocation + '<br/><strong>Home Team</strong>:' + homeTeam + '<br/><strong>Away Team</strong>:' + awayTeam + '<br/><strong> Time</strong>:' + gameTime + '<br/><strong>Network</strong>:' + network + '<br/><strong>Coverage</strong>:' + coverage + '<br/><strong>DirectTV Channel</strong>:' + channel;
+            ;
+        </script>
+    </div>
+
+
+    <div id="GameFour" class="col-md-3">
+        <script>
+            document.getElementById('gameData');
+            //document.getElementById('gameData').value;
+            var data = document.getElementById('gameData').value
+            var dataObject = JSON.parse(data)
+            //Game Location
+            var gameLocation = dataObject.games[4].venue.city;
+            //Home Team
+            var homeTeam = dataObject.games[4].home.name;
+            //AwayTeam
+            var awayTeam = dataObject.games[4].away.name;
+            //Time
+            var gameTime = dataObject.games[4].scheduled;
+            //Network
+            var network = dataObject.games[4].broadcast.network;
+            //Coverage
+            var coverage = dataObject.games[4].coverage;
+            //Channel
+            var channel = dataObject.games[4].broadcast.satellite;
+            document.getElementById('GameFour');
+            document.getElementById('GameFour').innerHTML = '<h4>Game Four</h3>' + '<strong>Location</strong>:' + gameLocation + '<br/><strong>Home Team</strong>:' + homeTeam + '<br/><strong>Away Team</strong>:' + awayTeam + '<br/><strong> Time</strong>:' + gameTime + '<br/><strong>Network</strong>:' + network + '<br/><strong>Coverage</strong>:' + coverage + '<br/><strong>DirectTV Channel</strong>:' + channel;
+            ;
+        </script>
+    </div>
+</div>
+<div class="row">
+    <div id="GameFive" class="col-md-3">
+        <script>
+            document.getElementById('gameData');
+            //document.getElementById('gameData').value;
+            var data = document.getElementById('gameData').value
+            var dataObject = JSON.parse(data)
+            //Game Location
+            var gameLocation = dataObject.games[5].venue.city;
+            //Home Team
+            var homeTeam = dataObject.games[5].home.name;
+            //AwayTeam
+            var awayTeam = dataObject.games[5].away.name;
+            //Time
+            var gameTime = dataObject.games[5].scheduled;
+            //Network
+            var network = dataObject.games[5].broadcast.network;
+            //Coverage
+            var coverage = dataObject.games[5].coverage;
+            //Channel
+            var channel = dataObject.games[5].broadcast.satellite;
+            document.getElementById('GameFive');
+            document.getElementById('GameFive').innerHTML = '<h4>Game Five</h3>' + '<strong>Location</strong>:' + gameLocation + '<br/><strong>Home Team</strong>:' + homeTeam + '<br/><strong>Away Team</strong>:' + awayTeam + '<br/><strong> Time</strong>:' + gameTime + '<br/><strong>Network</strong>:' + network + '<br/><strong>Coverage</strong>:' + coverage + '<br/><strong>DirectTV Channel</strong>:' + channel;
+            ;
+        </script>
+    </div>
+    <div id="GameSix" class="col-md-3">
+        <script>
+            document.getElementById('gameData');
+            //document.getElementById('gameData').value;
+            var data = document.getElementById('gameData').value
+            var dataObject = JSON.parse(data)
+            //Game Location
+            var gameLocation = dataObject.games[6].venue.city;
+            //Home Team
+            var homeTeam = dataObject.games[6].home.name;
+            //AwayTeam
+            var awayTeam = dataObject.games[6].away.name;
+            //Time
+            var gameTime = dataObject.games[6].scheduled;
+            //Network
+            var network = dataObject.games[6].broadcast.network;
+            //Coverage
+            var coverage = dataObject.games[6].coverage;
+            //Channel
+            var channel = dataObject.games[6].broadcast.satellite;
+            document.getElementById('GameSix');
+            document.getElementById('GameSix').innerHTML = '<h4>Game Six</h3>' + '<strong>Location</strong>:' + gameLocation + '<br/><strong>Home Team</strong>:' + homeTeam + '<br/><strong>Away Team</strong>:' + awayTeam + '<br/><strong> Time</strong>:' + gameTime + '<br/><strong>Network</strong>:' + network + '<br/><strong>Coverage</strong>:' + coverage + '<br/><strong>DirectTV Channel</strong>:' + channel;
+            ;
+        </script>
+    </div>
+    <div id="GameSeven" class="col-md-3">
+        <script>
+            document.getElementById('gameData');
+            //document.getElementById('gameData').value;
+            var data = document.getElementById('gameData').value
+            var dataObject = JSON.parse(data)
+            //Game Location
+            var gameLocation = dataObject.games[7].venue.city;
+            //Home Team
+            var homeTeam = dataObject.games[7].home.name;
+            //AwayTeam
+            var awayTeam = dataObject.games[7].away.name;
+            //Time
+            var gameTime = dataObject.games[7].scheduled;
+            //Network
+            var network = dataObject.games[7].broadcast.network;
+            //Coverage
+            var coverage = dataObject.games[7].coverage;
+            //Channel
+            var channel = dataObject.games[7].broadcast.satellite;
+            document.getElementById('GameSeven');
+            document.getElementById('GameSeven').innerHTML = '<h4>Game Seven</h3>' + '<strong>Location</strong>:' + gameLocation + '<br/><strong>Home Team</strong>:' + homeTeam + '<br/><strong>Away Team</strong>:' + awayTeam + '<br/><strong> Time</strong>:' + gameTime + '<br/><strong>Network</strong>:' + network + '<br/><strong>Coverage</strong>:' + coverage + '<br/><strong>DirectTV Channel</strong>:' + channel;
+            ;
+        </script>
+    </div>
+    <div id="GameEight" class="col-md-3">
+
+        <script>
+            document.getElementById('gameData');
+            //document.getElementById('gameData').value;
+            var data = document.getElementById('gameData').value
+            var dataObject = JSON.parse(data)
+            //Game Location
+            var gameLocation = dataObject.games[0].venue.city;
+            //Home Team
+            var homeTeam = dataObject.games[0].home.name;
+            //AwayTeam
+            var awayTeam = dataObject.games[0].away.name;
+            //Time
+            var gameTime = dataObject.games[0].scheduled;
+            //Network
+            var network = dataObject.games[0].broadcast.network;
+            //Coverage
+            var coverage = dataObject.games[0].coverage;
+            //Channel
+            var channel = dataObject.games[0].broadcast.satellite;
+            document.getElementById('GameEight');
+            document.getElementById('GameEight').innerHTML = '<h4>Game Eight</h3>' + '<strong>Location</strong>:' + gameLocation + '<br/><strong>Home Team</strong>:' + homeTeam + '<br/><strong>Away Team</strong>:' + awayTeam + '<br/><strong> Time</strong>:' + gameTime + '<br/><strong>Network</strong>:' + network + '<br/><strong>Coverage</strong>:' + coverage + '<br/><strong>DirectTV Channel</strong>:' + channel;
+            ;
+        </script>
+    </div>
+</div>
+
+
+@*
+    1)  get value from hidden fields document.getElementById('gameData');
+    2)  parse data to JSON Object (JSON.parse(value from hidden field))
+    3)  Display  (jQuery ofr vanila JS )
+        *How to put data in input field (vanilla JS?)
+            -put fields on page via the view (DOM manipulation)
+            -Create DOM elements on the fly in code (Use jQuery)
+    forEach through string
+    document.getElementById('GameInfo').innerHTML = '<ul><li>game1</li><li>game2</li></ul>';
+
+*@
+@*
+    <table class="table">
+        <tr>
+            <th>
+               Location:
+            </th>
+            <th>
+               Home Team:
+            </th>
+            <th>
+               Away Team:
+            </th>
+            <th>
+               Coverage:
+            </th>
+            <th>
+               Network:
+            </th>
+            <th>
+               DirectTV Channel:
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+        </tr>
+        @foreach (var  in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlayerName )
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Team)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Position)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PointsAvg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AssistsAvg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BlocksAvg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StealsAvg)
+                    </td>
+                </tr>
+            }
+    </table>*@
+

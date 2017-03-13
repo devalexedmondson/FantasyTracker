@@ -20,11 +20,11 @@ namespace FantasyTracker
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-slate.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+            bundles.Add(new StyleBundle("~/Content/css").Include(/*"~/Content/materialize.css"*/
+                      "~/Content/bootstrap-slate.css",
                       "~/Content/site.css"));
         }
     }
